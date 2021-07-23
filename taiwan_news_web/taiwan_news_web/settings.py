@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_crontab',
+    'rest_framework',
+    'django_filters',
     'taiwan_news',
 ]
 
@@ -132,5 +134,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 CRONJOBS = [
-    ('30 21 * * *', 'taiwan_news.cron.get_news_from_api')
+    ('0 22 * * *', 'taiwan_news.cron.get_news_from_api')
 ]

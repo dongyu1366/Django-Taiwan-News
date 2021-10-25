@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include 'taiwan_news/static.html' %}
+    <title>Taiwan News</title>
+</head>
+<body>
+    <div id="news-list">
+        <div v-for="news in newsData">
+            <div>
+                <strong>[[news.category]]</strong>
+                <h3>[[news.title]]</h3>
+                <div>[[news.date]]</div>
+                <p>[[news.abstract]]</p>
+            </div>
+            <div>
+                <img class="img-thumbnail" width="300" v-bind:src="news.image_url">
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="{% static 'taiwan_news/js/index.js' %}"></script>
+</html>
